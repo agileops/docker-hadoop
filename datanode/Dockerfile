@@ -1,4 +1,4 @@
-FROM fastds/hadoop-base:2.9.1
+FROM agileops/hadoop-base:2.9.1
 MAINTAINER michael@faille.io <michael@faille.io>
 
 HEALTHCHECK CMD curl -f http://localhost:50075/ || exit 1
