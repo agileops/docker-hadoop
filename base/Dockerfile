@@ -18,6 +18,10 @@ RUN set -x \
     && tar -xvf /tmp/hadoop.tar.gz -C /opt/ \
     && rm /tmp/hadoop.tar.gz* KEYS
 
+RUN echo "/opt/hadoop-$HADOOP_VERSION/lib/native" > /etc/ld.so.conf.d/hadoop.conf && \
+    ldconfig -v && \
+    apt install libssl1.0-dev libsnappy1v5
+
 RUN ln -s /opt/hadoop-$HADOOP_VERSION/etc/hadoop /etc/hadoop
 RUN cp /etc/hadoop/mapred-site.xml.template /etc/hadoop/mapred-site.xml
 RUN mkdir /opt/hadoop-$HADOOP_VERSION/logs
