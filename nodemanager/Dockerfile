@@ -1,5 +1,5 @@
-FROM bde2020/hadoop-base:1.1.0-hadoop2.7.1-java8
-MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
+FROM fastds/hadoop-base:2.9.1
+MAINTAINER michael@faille.io <michael@faille.io>
 
 HEALTHCHECK CMD curl -f http://localhost:8042/ || exit 1
 
